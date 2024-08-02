@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+            <style>
+                progress {
+                    width: 210px;
+                }
+                .shape-ex5{
+                    width: 66px;
+                    height: 38px;
+                    background-color: #666;
+                    display: block;
+                    position: relative;
+                    margin: 25px 0;
+                }
+                .shape-ex5::before{
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    display: block;
+                    border-left: 33px solid transparent;
+                    border-bottom: 19px solid #666;
+                    border-right: 33px solid transparent;
+                    position: absolute;
+                    bottom: 100%;
+                    left: 0;
+                }
+                .shape-ex5::after{
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    display: block;
+                    border-left: 33px solid transparent;
+                    border-top: 19px solid #666;
+                    border-right: 33px solid transparent;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                }
+                .shape-ex6{
+                    width: 198px;
+                    height: 114px;
+                    background-color: #666;
+                    display: block;
+                    position: relative;
+                    margin: 25px 0;
+                }
+                .shape-ex6::before{
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    display: block;
+                    border-left: 99px solid transparent;
+                    border-bottom: 57px solid #666;
+                    border-right: 99px solid transparent;
+                    position: absolute;
+                    bottom: 100%;
+                    left: 0;
+                }
+                .shape-ex6::after{
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    display: block;
+                    border-left: 99px solid transparent;
+                    border-top: 57px solid #666;
+                    border-right: 99px solid transparent;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                }
+            </style>
+    </head>
+
+<body>
+    <!--技能核心-->
+    <span class="shape-ex5" style="position: absolute;top:0;left:8px;"></span><span class="shape-ex5" style="position: absolute;top:0;left:76px;"></span>
+    <span class="shape-ex5" style="position: absolute;top:59px;left:42px;"></span><span class="shape-ex5" style="position: absolute;top:59px;left:110px;"></span>
+    <span class="shape-ex5" style="position: absolute;top:118px;left:76px;"></span>
+    <!--精通核心-->
+    <span class="shape-ex5" style="position: absolute;top:0;left:378px;"></span>
+    <span class="shape-ex5" style="position: absolute;top:59px;left:276px;"></span>
+    <!--共通核心-->
+    <span class="shape-ex5" style="position: absolute;top:321px;left:276px;"></span><span class="shape-ex5" style="position: absolute;top:321px;left:344px;"></span>
+    <span class="shape-ex5" style="position: absolute;top:380px;left:378px;"></span>
+
+    <!--技能核心-->
+    <!--1-->
+    <span class="shape-ex5" style="position: absolute;top:118px;left:144px;"></span>
+    <input id="skill1" style="position: absolute;top:144px;left:148px;width: 50px;text-align: center;" placeholder="請輸入" oninput="value=value.replace(/[^\d]/g,'')" inputmode="numeric">
+    <b id="skill1c" style="position: absolute;top:166px;left:152px;color:antiquewhite;width: 50px;text-align: center;"></b>
+    <!--精通核心-->
+    <!--1-->
+    <span class="shape-ex5" style="position: absolute;top:118px;left:242px;"></span>
+    <input id="jinton1" style="position: absolute;top:144px;left:246px;width: 50px;text-align: center;" placeholder="請輸入" oninput="value=value.replace(/[^\d]/g,'')" inputmode="numeric">
+    <b id="jinton1c" style="position: absolute;top:166px;left:250px;color:antiquewhite;width: 50px;text-align: center;"></b>
+    <!--2-->
+    <span class="shape-ex5" style="position: absolute;top:59px;left:344px;"></span>
+    <input id="jinton2" style="position: absolute;top:85px;left:281px;width: 50px;text-align: center;" placeholder="請輸入" oninput="value=value.replace(/[^\d]/g,'')" inputmode="numeric">
+    <b id="jinton2c" style="position: absolute;top:108px;left:278px;color:antiquewhite;width: 64px;text-align: center;"></b>
+    <!--強化核心-->
+    <!--1-->
+    <span class="shape-ex5" style="position: absolute;top:262px;left:144px;"></span>
+    <input id="strong1" style="position: absolute;top:288px;left:148px;width: 50px;text-align: center;" placeholder="請輸入" oninput="value=value.replace(/[^\d]/g,'')" inputmode="numeric">
+    <b id="strong1c" style="position: absolute;top:310px;left:152px;color:antiquewhite;width: 50px;text-align: center;"></b>
+    <!--2-->
+    <span class="shape-ex5" style="position: absolute;top:321px;left:110px;"></span>
+    <input id="strong2" style="position: absolute;top:347px;left:114px;width: 50px;text-align: center;" placeholder="請輸入" oninput="value=value.replace(/[^\d]/g,'')" inputmode="numeric">
+    <b id="strong2c" style="position: absolute;top:369px;left:118px;color:antiquewhite;width: 50px;text-align: center;"></b>
+    <!--3-->
+    <span class="shape-ex5" style="position: absolute;top:321px;left:42px;"></span>
+    <input id="strong3" style="position: absolute;top:347px;left:46px;width: 50px;text-align: center;" placeholder="請輸入" oninput="value=value.replace(/[^\d]/g,'')" inputmode="numeric">
+    <b id="strong3c" style="position: absolute;top:369px;left:50px;color:antiquewhite;width: 50px;text-align: center;"></b>
+    <!--4-->
+    <span class="shape-ex5" style="position: absolute;top:380px;left:8px;"></span>
+    <input id="strong4" style="position: absolute;top:406px;left:12px;width: 50px;text-align: center;" placeholder="請輸入" oninput="value=value.replace(/[^\d]/g,'')" inputmode="numeric">
+    <b id="strong4c" style="position: absolute;top:428px;left:16px;color:antiquewhite;width: 50px;text-align: center;"></b>
+    <!--共通核心-->
+    <!--1-->
+    <span class="shape-ex5" style="position: absolute;top:262px;left:242px;"></span>
+    <input id="konton1" style="position: absolute;top:288px;left:246px;width: 50px;text-align: center;" placeholder="請輸入" oninput="value=value.replace(/[^\d]/g,'')" inputmode="numeric">
+	<b id="konton1c" style="position: absolute;top:310px;left:244px;color:antiquewhite;width: 64px;text-align: center;"></b>
+
+    <button onclick="go()" style="position: absolute;top:430px;left:170px;width:100px;height: 30px;"><b style="font-size: 18px;">計算</b></button><br>
+    <b style="position: absolute;top:467px;left:52px;">碎片進度：</b>
+    <progress max="28704" value="0" id="vvv" style="position: absolute;top:470px;left:132px;"></progress>
+    <b id="ooo1" style="position: absolute;top:470px;left:347px;"></b><span id="ooo2"></span>
+    <b style="position: absolute;top:487px;left:52px;">碎片總消耗量：</b><b id="all" style="position: absolute;top:490px;left:162px;"></b><br>
+    <b style="position: absolute;top:507px;left:52px;">還需碎片數量：</b><b id="all2" style="position: absolute;top:510px;left:162px;"></b><br>
+    <b id="no2" style="position: absolute;top:659px;left:332px;"></b>
+    
+    <div id="hexa666" style="display: none;">
+        <label>技能核心：等級</label><br>
+        <label>消耗碎片數量：</label><span id="skill1b"></span><label><br>
+        距離滿等還缺：</label><label>個碎片</label><br>
+        <label>精通核心1：等級</label><br>
+        <label>消耗碎片數量：</label><span id="jinton1b"></span><label><br>
+        距離滿等還缺：</label><label>個碎片</label><br>
+		<label>精通核心2：等級</label><br>
+        <label>消耗碎片數量：</label><span id="jinton2b"></span><label><br>
+        距離滿等還缺：</label><label>個碎片</label><br>
+        <label>強化核心1：等級</label><br>
+        <label>消耗碎片數量：</label><span id="strong1b"></span><label><br>
+        距離滿等還缺：</label><label>個碎片</label><br>
+        <label>強化核心2：等級</label><br>
+        <label>消耗碎片數量：</label><span id="strong2b"></span><label><br>
+        距離滿等還缺：</label><label>個碎片</label><br>
+        <label>強化核心3：等級</label><br>
+        <label>消耗碎片數量：</label><span id="strong3b"></span><label><br>
+        距離滿等還缺：</label><label>個碎片</label><br>
+        <label>強化核心4：等級</label><br>
+        <label>消耗碎片數量：</label><span id="strong4b"></span><label><br>
+        距離滿等還缺：</label><label>個碎片</label><br><br>
+		<label>共通核心：等級</label><br>
+        <label>消耗碎片數量：</label><span id="konton1b"></span><label><br>
+        距離滿等還缺：</label><label>個碎片</label><br><br>
+        
+</div>
+<span class="shape-ex6" style="position: absolute;top:600px;left:120px;"></span>
+<b style="position: absolute;top:615px;left:185px;color: antiquewhite;">使用說明</b>
+<b style="position: absolute;top:651px;left:135px;color: antiquewhite;">1.</b><b style="position: absolute;top:647px;left:155px;background-color: black;color: antiquewhite;border-style:solid;border-radius: 5px;">&ensp;輸入技能等級&ensp;0~30&ensp;</b>
+<b style="position: absolute;top:683px;left:135px;color: antiquewhite;">2.&ensp;按下</b><b style="position: absolute;top:680px;left:190px;background-color: black;color: antiquewhite;border-style:solid;border-radius: 5px;">&ensp;計算&ensp;</b>
+<b style="position: absolute;top:715px;left:140px;color: antiquewhite;">&ensp;顯示滿等還需碎片數&ensp;</b>
+
+<script>
+function go() {
+    var skilv = document.getElementById('skill1').value;
+    var jin1lv = document.getElementById('jinton1').value;
+    var jin2lv = document.getElementById('jinton2').value;
+    var str1lv = document.getElementById('strong1').value;
+    var str2lv = document.getElementById('strong2').value;
+    var str3lv = document.getElementById('strong3').value;
+    var str4lv = document.getElementById('strong4').value;
+	var konlv = document.getElementById('konton1').value;
+
+    if (skilv == 0) {
+        document.getElementById("skill1b").innerHTML = 0;
+        document.getElementById("skill1c").innerHTML = 4400 - 0;
+    }
+    if (skilv == 1) {
+        document.getElementById("skill1b").innerHTML = 0;
+        document.getElementById("skill1c").innerHTML = 4400 - 0;
+    }
+    if (skilv == 2) {
+        document.getElementById("skill1b").innerHTML = 30;
+        document.getElementById("skill1c").innerHTML = 4400 - 30;
+    }
+    if (skilv == 3) {
+        document.getElementById("skill1b").innerHTML = 65;
+        document.getElementById("skill1c").innerHTML = 4400 - 65;
+    }
+    if (skilv == 4) {
+        document.getElementById("skill1b").innerHTML = 105;
+        document.getElementById("skill1c").innerHTML = 4400 - 105;
+    }
+    if (skilv == 5) {
+        document.getElementById("skill1b").innerHTML = 150;
+        document.getElementById("skill1c").innerHTML = 4400 - 150;
+    }
+    if (skilv == 6) {
+        document.getElementById("skill1b").innerHTML = 200;
+        document.getElementById("skill1c").innerHTML = 4400 - 200;
+    }
+    if (skilv == 7) {
+        document.getElementById("skill1b").innerHTML = 255;
+        document.getElementById("skill1c").innerHTML = 4400 - 255;
+    }
+    if (skilv == 8) {
+        document.getElementById("skill1b").innerHTML = 315;
+        document.getElementById("skill1c").innerHTML = 4400 - 315;
+    }
+    if (skilv == 9) {
+        document.getElementById("skill1b").innerHTML = 380;
+        document.getElementById("skill1c").innerHTML = 4400 - 380;
+    }
+    if (skilv == 10) {
+        document.getElementById("skill1b").innerHTML = 580;
+        document.getElementById("skill1c").innerHTML = 4400 - 580;
+    }
+    if (skilv == 11) {
+        document.getElementById("skill1b").innerHTML = 660;
+        document.getElementById("skill1c").innerHTML = 4400 - 660;
+    }
+    if (skilv == 12) {
+        document.getElementById("skill1b").innerHTML = 750;
+        document.getElementById("skill1c").innerHTML = 4400 - 750;
+    }
+    if (skilv == 13) {
+        document.getElementById("skill1b").innerHTML = 850;
+        document.getElementById("skill1c").innerHTML = 4400 - 850;
+    }
+    if (skilv == 14) {
+        document.getElementById("skill1b").innerHTML = 960;
+        document.getElementById("skill1c").innerHTML = 4400 - 960;
+    }
+    if (skilv == 15) {
+        document.getElementById("skill1b").innerHTML = 1080;
+        document.getElementById("skill1c").innerHTML = 4400 - 1080;
+    }
+    if (skilv == 16) {
+        document.getElementById("skill1b").innerHTML = 1210;
+        document.getElementById("skill1c").innerHTML = 4400 - 1210;
+    }
+    if (skilv == 17) {
+        document.getElementById("skill1b").innerHTML = 1350;
+        document.getElementById("skill1c").innerHTML = 4400 - 1350;
+    }
+    if (skilv == 18) {
+        document.getElementById("skill1b").innerHTML = 1500;
+        document.getElementById("skill1c").innerHTML = 4400 - 1500;
+    }
+    if (skilv == 19) {
+        document.getElementById("skill1b").innerHTML = 1660;
+        document.getElementById("skill1c").innerHTML = 4400 - 1660;
+    }
+    if (skilv == 20) {
+        document.getElementById("skill1b").innerHTML = 2010;
+        document.getElementById("skill1c").innerHTML = 4400 - 2010;
+    }
+    if (skilv == 21) {
+        document.getElementById("skill1b").innerHTML = 2180;
+        document.getElementById("skill1c").innerHTML = 4400 - 2180;
+    }
+    if (skilv == 22) {
+        document.getElementById("skill1b").innerHTML = 2360;
+        document.getElementById("skill1c").innerHTML = 4400 - 2360;
+    }
+    if (skilv == 23) {
+        document.getElementById("skill1b").innerHTML = 2550;
+        document.getElementById("skill1c").innerHTML = 4400 - 2550;
+    }
+    if (skilv == 24) {
+        document.getElementById("skill1b").innerHTML = 2750;
+        document.getElementById("skill1c").innerHTML = 4400 - 2750;
+    }
+    if (skilv == 25) {
+        document.getElementById("skill1b").innerHTML = 2960;
+        document.getElementById("skill1c").innerHTML = 4400 - 2960;
+    }
+    if (skilv == 26) {
+        document.getElementById("skill1b").innerHTML = 3180;
+        document.getElementById("skill1c").innerHTML = 4400 - 3180;
+    }
+    if (skilv == 27) {
+        document.getElementById("skill1b").innerHTML = 3410;
+        document.getElementById("skill1c").innerHTML = 4400 - 3410;
+    }
+    if (skilv == 28) {
+        document.getElementById("skill1b").innerHTML = 3650;
+        document.getElementById("skill1c").innerHTML = 4400 - 3650;
+    }
+    if (skilv == 29) {
+        document.getElementById("skill1b").innerHTML = 3900;
+        document.getElementById("skill1c").innerHTML = 4400 - 3900;
+    }
+    if (skilv == 30) {
+        document.getElementById("skill1b").innerHTML = 4400;
+        document.getElementById("skill1c").innerHTML = 4400 - 4400;
+    }
+    if (skilv >-1 & skilv<31) {
+        document.getElementById("skill1c").style.color = "antiquewhite";
+    }else{
+        document.getElementById("skill1c").innerHTML = "請更正";
+        document.getElementById("skill1c").style.color = "red";
+    }
+
+
+    if (jin1lv == 0) {
+        document.getElementById("jinton1b").innerHTML = 0;
+        document.getElementById("jinton1c").innerHTML = 2252 - 0;
+    }
+    if (jin1lv == 1) {
+        document.getElementById("jinton1b").innerHTML = 50;
+        document.getElementById("jinton1c").innerHTML = 2252 - 50;
+    }
+    if (jin1lv == 2) {
+        document.getElementById("jinton1b").innerHTML = 65;
+        document.getElementById("jinton1c").innerHTML = 2252 - 65;
+    }
+    if (jin1lv == 3) {
+        document.getElementById("jinton1b").innerHTML = 83;
+        document.getElementById("jinton1c").innerHTML = 2252 - 83;
+    }
+    if (jin1lv == 4) {
+        document.getElementById("jinton1b").innerHTML = 103;
+        document.getElementById("jinton1c").innerHTML = 2252 - 103;
+    }
+    if (jin1lv == 5) {
+        document.getElementById("jinton1b").innerHTML = 126;
+        document.getElementById("jinton1c").innerHTML = 2252 - 126;
+    }
+    if (jin1lv == 6) {
+        document.getElementById("jinton1b").innerHTML = 151;
+        document.getElementById("jinton1c").innerHTML = 2252 - 151;
+    }
+    if (jin1lv == 7) {
+        document.getElementById("jinton1b").innerHTML = 179;
+        document.getElementById("jinton1c").innerHTML = 2252 - 179;
+    }
+    if (jin1lv == 8) {
+        document.getElementById("jinton1b").innerHTML = 209;
+        document.getElementById("jinton1c").innerHTML = 2252 - 209;
+    }
+    if (jin1lv == 9) {
+        document.getElementById("jinton1b").innerHTML = 242;
+        document.getElementById("jinton1c").innerHTML = 2252 - 242;
+    }
+    if (jin1lv == 10) {
+        document.getElementById("jinton1b").innerHTML = 342;
+        document.getElementById("jinton1c").innerHTML = 2252 - 342;
+    }
+    if (jin1lv == 11) {
+        document.getElementById("jinton1b").innerHTML = 382;
+        document.getElementById("jinton1c").innerHTML = 2252 - 382;
+    }
+    if (jin1lv == 12) {
+        document.getElementById("jinton1b").innerHTML = 427;
+        document.getElementById("jinton1c").innerHTML = 2252 - 427;
+    }
+    if (jin1lv == 13) {
+        document.getElementById("jinton1b").innerHTML = 477;
+        document.getElementById("jinton1c").innerHTML = 2252 - 477;
+    }
+    if (jin1lv == 14) {
+        document.getElementById("jinton1b").innerHTML = 532;
+        document.getElementById("jinton1c").innerHTML = 2252 - 532;
+    }
+    if (jin1lv == 15) {
+        document.getElementById("jinton1b").innerHTML = 592;
+        document.getElementById("jinton1c").innerHTML = 2252 - 592;
+    }
+    if (jin1lv == 16) {
+        document.getElementById("jinton1b").innerHTML = 657;
+        document.getElementById("jinton1c").innerHTML = 2252 - 657;
+    }
+    if (jin1lv == 17) {
+        document.getElementById("jinton1b").innerHTML = 727;
+        document.getElementById("jinton1c").innerHTML = 2252 - 727;
+    }
+    if (jin1lv == 18) {
+        document.getElementById("jinton1b").innerHTML = 802;
+        document.getElementById("jinton1c").innerHTML = 2252 - 802;
+    }
+    if (jin1lv == 19) {
+        document.getElementById("jinton1b").innerHTML = 882;
+        document.getElementById("jinton1c").innerHTML = 2252 - 882;
+    }
+    if (jin1lv == 20) {
+        document.getElementById("jinton1b").innerHTML = 1057;
+        document.getElementById("jinton1c").innerHTML = 2252 - 1057;
+    }
+    if (jin1lv == 21) {
+        document.getElementById("jinton1b").innerHTML = 1142;
+        document.getElementById("jinton1c").innerHTML = 2252 - 1142;
+    }
+    if (jin1lv == 22) {
+        document.getElementById("jinton1b").innerHTML = 1232;
+        document.getElementById("jinton1c").innerHTML = 2252 - 1232;
+    }
+    if (jin1lv == 23) {
+        document.getElementById("jinton1b").innerHTML = 1327;
+        document.getElementById("jinton1c").innerHTML = 2252 - 1327;
+    }
+    if (jin1lv == 24) {
+        document.getElementById("jinton1b").innerHTML = 1427;
+        document.getElementById("jinton1c").innerHTML = 2252 - 1427;
+    }
+    if (jin1lv == 25) {
+        document.getElementById("jinton1b").innerHTML = 1532;
+        document.getElementById("jinton1c").innerHTML = 2252 - 1532;
+    }
+    if (jin1lv == 26) {
+        document.getElementById("jinton1b").innerHTML = 1642;
+        document.getElementById("jinton1c").innerHTML = 2252 - 1642;
+    }
+    if (jin1lv == 27) {
+        document.getElementById("jinton1b").innerHTML = 1757;
+        document.getElementById("jinton1c").innerHTML = 2252 - 1757;
+    }
+    if (jin1lv == 28) {
+        document.getElementById("jinton1b").innerHTML = 1877;
+        document.getElementById("jinton1c").innerHTML = 2252 - 1877;
+    }
+    if (jin1lv == 29) {
+        document.getElementById("jinton1b").innerHTML = 2002;
+        document.getElementById("jinton1c").innerHTML = 2252 - 2002;
+    }
+    if (jin1lv == 30) {
+        document.getElementById("jinton1b").innerHTML = 2252;
+        document.getElementById("jinton1c").innerHTML = 2252 - 2252;
+    }
+    if (jin1lv >-1 & jin1lv<31) {
+        document.getElementById("jinton1c").style.color = "antiquewhite";
+    }else{
+        document.getElementById("jinton1c").innerHTML = "請更正";
+        document.getElementById("jinton1c").style.color = "red";
+    }
+	
+	if (jin2lv == 0) {
+        document.getElementById("jinton2b").innerHTML = 0;
+        document.getElementById("jinton2c").innerHTML = 2252 - 0;
+    }
+    if (jin2lv == 1) {
+        document.getElementById("jinton2b").innerHTML = 50;
+        document.getElementById("jinton2c").innerHTML = 2252 - 50;
+    }
+    if (jin2lv == 2) {
+        document.getElementById("jinton2b").innerHTML = 65;
+        document.getElementById("jinton2c").innerHTML = 2252 - 65;
+    }
+    if (jin2lv == 3) {
+        document.getElementById("jinton2b").innerHTML = 83;
+        document.getElementById("jinton2c").innerHTML = 2252 - 83;
+    }
+    if (jin2lv == 4) {
+        document.getElementById("jinton2b").innerHTML = 103;
+        document.getElementById("jinton2c").innerHTML = 2252 - 103;
+    }
+    if (jin2lv == 5) {
+        document.getElementById("jinton2b").innerHTML = 126;
+        document.getElementById("jinton2c").innerHTML = 2252 - 126;
+    }
+    if (jin2lv == 6) {
+        document.getElementById("jinton2b").innerHTML = 151;
+        document.getElementById("jinton2c").innerHTML = 2252 - 151;
+    }
+    if (jin2lv == 7) {
+        document.getElementById("jinton2b").innerHTML = 179;
+        document.getElementById("jinton2c").innerHTML = 2252 - 179;
+    }
+    if (jin2lv == 8) {
+        document.getElementById("jinton2b").innerHTML = 209;
+        document.getElementById("jinton2c").innerHTML = 2252 - 209;
+    }
+    if (jin2lv == 9) {
+        document.getElementById("jinton2b").innerHTML = 242;
+        document.getElementById("jinton2c").innerHTML = 2252 - 242;
+    }
+    if (jin2lv == 10) {
+        document.getElementById("jinton2b").innerHTML = 342;
+        document.getElementById("jinton2c").innerHTML = 2252 - 342;
+    }
+    if (jin2lv == 11) {
+        document.getElementById("jinton2b").innerHTML = 382;
+        document.getElementById("jinton2c").innerHTML = 2252 - 382;
+    }
+    if (jin2lv == 12) {
+        document.getElementById("jinton2b").innerHTML = 427;
+        document.getElementById("jinton2c").innerHTML = 2252 - 427;
+    }
+    if (jin2lv == 13) {
+        document.getElementById("jinton2b").innerHTML = 477;
+        document.getElementById("jinton2c").innerHTML = 2252 - 477;
+    }
+    if (jin2lv == 14) {
+        document.getElementById("jinton2b").innerHTML = 532;
+        document.getElementById("jinton2c").innerHTML = 2252 - 532;
+    }
+    if (jin2lv == 15) {
+        document.getElementById("jinton2b").innerHTML = 592;
+        document.getElementById("jinton2c").innerHTML = 2252 - 592;
+    }
+    if (jin2lv == 16) {
+        document.getElementById("jinton2b").innerHTML = 657;
+        document.getElementById("jinton2c").innerHTML = 2252 - 657;
+    }
+    if (jin2lv == 17) {
+        document.getElementById("jinton2b").innerHTML = 727;
+        document.getElementById("jinton2c").innerHTML = 2252 - 727;
+    }
+    if (jin2lv == 18) {
+        document.getElementById("jinton2b").innerHTML = 802;
+        document.getElementById("jinton2c").innerHTML = 2252 - 802;
+    }
+    if (jin2lv == 19) {
+        document.getElementById("jinton2b").innerHTML = 882;
+        document.getElementById("jinton2c").innerHTML = 2252 - 882;
+    }
+    if (jin2lv == 20) {
+        document.getElementById("jinton2b").innerHTML = 1057;
+        document.getElementById("jinton2c").innerHTML = 2252 - 1057;
+    }
+    if (jin2lv == 21) {
+        document.getElementById("jinton2b").innerHTML = 1142;
+        document.getElementById("jinton2c").innerHTML = 2252 - 1142;
+    }
+    if (jin2lv == 22) {
+        document.getElementById("jinton2b").innerHTML = 1232;
+        document.getElementById("jinton2c").innerHTML = 2252 - 1232;
+    }
+    if (jin2lv == 23) {
+        document.getElementById("jinton2b").innerHTML = 1327;
+        document.getElementById("jinton2c").innerHTML = 2252 - 1327;
+    }
+    if (jin2lv == 24) {
+        document.getElementById("jinton2b").innerHTML = 1427;
+        document.getElementById("jinton2c").innerHTML = 2252 - 1427;
+    }
+    if (jin2lv == 25) {
+        document.getElementById("jinton2b").innerHTML = 1532;
+        document.getElementById("jinton2c").innerHTML = 2252 - 1532;
+    }
+    if (jin2lv == 26) {
+        document.getElementById("jinton2b").innerHTML = 1642;
+        document.getElementById("jinton2c").innerHTML = 2252 - 1642;
+    }
+    if (jin2lv == 27) {
+        document.getElementById("jinton2b").innerHTML = 1757;
+        document.getElementById("jinton2c").innerHTML = 2252 - 1757;
+    }
+    if (jin2lv == 28) {
+        document.getElementById("jinton2b").innerHTML = 1877;
+        document.getElementById("jinton2c").innerHTML = 2252 - 1877;
+    }
+    if (jin2lv == 29) {
+        document.getElementById("jinton2b").innerHTML = 2002;
+        document.getElementById("jinton2c").innerHTML = 2252 - 2002;
+    }
+    if (jin2lv == 30) {
+        document.getElementById("jinton2b").innerHTML = 2252;
+        document.getElementById("jinton2c").innerHTML = 2252 - 2252;
+    }
+    if (jin2lv >-1 & jin2lv<31) {
+        document.getElementById("jinton2c").style.color = "antiquewhite";
+    }else{
+        document.getElementById("jinton2c").innerHTML = "請更正";
+        document.getElementById("jinton2c").style.color = "red";
+    }
+
+
+    if (str1lv == 0) {
+        document.getElementById("strong1b").innerHTML = 0;
+        document.getElementById("strong1c").innerHTML = 3383 - 0;
+    }
+    if (str1lv == 1) {
+        document.getElementById("strong1b").innerHTML = 75;
+        document.getElementById("strong1c").innerHTML = 3383 - 75;
+    }
+    if (str1lv == 2) {
+        document.getElementById("strong1b").innerHTML = 98;
+        document.getElementById("strong1c").innerHTML = 3383 - 98;
+    }
+    if (str1lv == 3) {
+        document.getElementById("strong1b").innerHTML = 125;
+        document.getElementById("strong1c").innerHTML = 3383 - 125;
+    }
+    if (str1lv == 4) {
+        document.getElementById("strong1b").innerHTML = 155;
+        document.getElementById("strong1c").innerHTML = 3383 - 155;
+    }
+    if (str1lv == 5) {
+        document.getElementById("strong1b").innerHTML = 189;
+        document.getElementById("strong1c").innerHTML = 3383 - 189;
+    }
+    if (str1lv == 6) {
+        document.getElementById("strong1b").innerHTML = 227;
+        document.getElementById("strong1c").innerHTML = 3383 - 227;
+    }
+    if (str1lv == 7) {
+        document.getElementById("strong1b").innerHTML = 269;
+        document.getElementById("strong1c").innerHTML = 3383 - 269;
+    }
+    if (str1lv == 8) {
+        document.getElementById("strong1b").innerHTML = 314;
+        document.getElementById("strong1c").innerHTML = 3383 - 314;
+    }
+    if (str1lv == 9) {
+        document.getElementById("strong1b").innerHTML = 363;
+        document.getElementById("strong1c").innerHTML = 3383 - 363;
+    }
+    if (str1lv == 10) {
+        document.getElementById("strong1b").innerHTML = 513;
+        document.getElementById("strong1c").innerHTML = 3383 - 513;
+    }
+    if (str1lv == 11) {
+        document.getElementById("strong1b").innerHTML = 573;
+        document.getElementById("strong1c").innerHTML = 3383 - 573;
+    }
+    if (str1lv == 12) {
+        document.getElementById("strong1b").innerHTML = 641;
+        document.getElementById("strong1c").innerHTML = 3383 - 641;
+    }
+    if (str1lv == 13) {
+        document.getElementById("strong1b").innerHTML = 716;
+        document.getElementById("strong1c").innerHTML = 3383 - 716;
+    }
+    if (str1lv == 14) {
+        document.getElementById("strong1b").innerHTML = 799;
+        document.getElementById("strong1c").innerHTML = 3383 - 799;
+    }
+    if (str1lv == 15) {
+        document.getElementById("strong1b").innerHTML = 889;
+        document.getElementById("strong1c").innerHTML = 3383 - 889;
+    }
+    if (str1lv == 16) {
+        document.getElementById("strong1b").innerHTML = 987;
+        document.getElementById("strong1c").innerHTML = 3383 - 987;
+    }
+    if (str1lv == 17) {
+        document.getElementById("strong1b").innerHTML = 1092;
+        document.getElementById("strong1c").innerHTML = 3383 - 1092;
+    }
+    if (str1lv == 18) {
+        document.getElementById("strong1b").innerHTML = 1205;
+        document.getElementById("strong1c").innerHTML = 3383 - 1205;
+    }
+    if (str1lv == 19) {
+        document.getElementById("strong1b").innerHTML = 1325;
+        document.getElementById("strong1c").innerHTML = 3383 - 1325;
+    }
+    if (str1lv == 20) {
+        document.getElementById("strong1b").innerHTML = 1588;
+        document.getElementById("strong1c").innerHTML = 3383 - 1588;
+    }
+    if (str1lv == 21) {
+        document.getElementById("strong1b").innerHTML = 1716;
+        document.getElementById("strong1c").innerHTML = 3383 - 1716;
+    }
+    if (str1lv == 22) {
+        document.getElementById("strong1b").innerHTML = 1851;
+        document.getElementById("strong1c").innerHTML = 3383 - 1851;
+    }
+    if (str1lv == 23) {
+        document.getElementById("strong1b").innerHTML = 1994;
+        document.getElementById("strong1c").innerHTML = 3383 - 1994;
+    }
+    if (str1lv == 24) {
+        document.getElementById("strong1b").innerHTML = 2144;
+        document.getElementById("strong1c").innerHTML = 3383 - 2144;
+    }
+    if (str1lv == 25) {
+        document.getElementById("strong1b").innerHTML = 2302;
+        document.getElementById("strong1c").innerHTML = 3383 - 2302;
+    }
+    if (str1lv == 26) {
+        document.getElementById("strong1b").innerHTML = 2467;
+        document.getElementById("strong1c").innerHTML = 3383 - 2467;
+    }
+    if (str1lv == 27) {
+        document.getElementById("strong1b").innerHTML = 2640;
+        document.getElementById("strong1c").innerHTML = 3383 - 2640;
+    }
+    if (str1lv == 28) {
+        document.getElementById("strong1b").innerHTML = 2820;
+        document.getElementById("strong1c").innerHTML = 3383 - 2820;
+    }
+    if (str1lv == 29) {
+        document.getElementById("strong1b").innerHTML = 3008;
+        document.getElementById("strong1c").innerHTML = 3383 - 3008;
+    }
+    if (str1lv == 30) {
+        document.getElementById("strong1b").innerHTML = 3383;
+        document.getElementById("strong1c").innerHTML = 3383 - 3383;
+    }
+    if (str1lv >-1 & str1lv<31) {
+        document.getElementById("strong1c").style.color = "antiquewhite";
+    }else{
+        document.getElementById("strong1c").innerHTML = "請更正";
+        document.getElementById("strong1c").style.color = "red";
+    }
+
+    if (str2lv == 0) {
+        document.getElementById("strong2b").innerHTML = 0;
+        document.getElementById("strong2c").innerHTML = 3383 - 0;
+    }
+    if (str2lv == 1) {
+        document.getElementById("strong2b").innerHTML = 75;
+        document.getElementById("strong2c").innerHTML = 3383 - 75;
+    }
+    if (str2lv == 2) {
+        document.getElementById("strong2b").innerHTML = 98;
+        document.getElementById("strong2c").innerHTML = 3383 - 98;
+    }
+    if (str2lv == 3) {
+        document.getElementById("strong2b").innerHTML = 125;
+        document.getElementById("strong2c").innerHTML = 3383 - 125;
+    }
+    if (str2lv == 4) {
+        document.getElementById("strong2b").innerHTML = 155;
+        document.getElementById("strong2c").innerHTML = 3383 - 155;
+    }
+    if (str2lv == 5) {
+        document.getElementById("strong2b").innerHTML = 189;
+        document.getElementById("strong2c").innerHTML = 3383 - 189;
+    }
+    if (str2lv == 6) {
+        document.getElementById("strong2b").innerHTML = 227;
+        document.getElementById("strong2c").innerHTML = 3383 - 227;
+    }
+    if (str2lv == 7) {
+        document.getElementById("strong2b").innerHTML = 269;
+        document.getElementById("strong2c").innerHTML = 3383 - 269;
+    }
+    if (str2lv == 8) {
+        document.getElementById("strong2b").innerHTML = 314;
+        document.getElementById("strong2c").innerHTML = 3383 - 314;
+    }
+    if (str2lv == 9) {
+        document.getElementById("strong2b").innerHTML = 363;
+        document.getElementById("strong2c").innerHTML = 3383 - 363;
+    }
+    if (str2lv == 10) {
+        document.getElementById("strong2b").innerHTML = 513;
+        document.getElementById("strong2c").innerHTML = 3383 - 513;
+    }
+    if (str2lv == 11) {
+        document.getElementById("strong2b").innerHTML = 573;
+        document.getElementById("strong2c").innerHTML = 3383 - 573;
+    }
+    if (str2lv == 12) {
+        document.getElementById("strong2b").innerHTML = 641;
+        document.getElementById("strong2c").innerHTML = 3383 - 641;
+    }
+    if (str2lv == 13) {
+        document.getElementById("strong2b").innerHTML = 716;
+        document.getElementById("strong2c").innerHTML = 3383 - 716;
+    }
+    if (str2lv == 14) {
+        document.getElementById("strong2b").innerHTML = 799;
+        document.getElementById("strong2c").innerHTML = 3383 - 799;
+    }
+    if (str2lv == 15) {
+        document.getElementById("strong2b").innerHTML = 889;
+        document.getElementById("strong2c").innerHTML = 3383 - 889;
+    }
+    if (str2lv == 16) {
+        document.getElementById("strong2b").innerHTML = 987;
+        document.getElementById("strong2c").innerHTML = 3383 - 987;
+    }
+    if (str2lv == 17) {
+        document.getElementById("strong2b").innerHTML = 1092;
+        document.getElementById("strong2c").innerHTML = 3383 - 1092;
+    }
+    if (str2lv == 18) {
+        document.getElementById("strong2b").innerHTML = 1205;
+        document.getElementById("strong2c").innerHTML = 3383 - 1205;
+    }
+    if (str2lv == 19) {
+        document.getElementById("strong2b").innerHTML = 1325;
+        document.getElementById("strong2c").innerHTML = 3383 - 1325;
+    }
+    if (str2lv == 20) {
+        document.getElementById("strong2b").innerHTML = 1588;
+        document.getElementById("strong2c").innerHTML = 3383 - 1588;
+    }
+    if (str2lv == 21) {
+        document.getElementById("strong2b").innerHTML = 1716;
+        document.getElementById("strong2c").innerHTML = 3383 - 1716;
+    }
+    if (str2lv == 22) {
+        document.getElementById("strong2b").innerHTML = 1851;
+        document.getElementById("strong2c").innerHTML = 3383 - 1851;
+    }
+    if (str2lv == 23) {
+        document.getElementById("strong2b").innerHTML = 1994;
+        document.getElementById("strong2c").innerHTML = 3383 - 1994;
+    }
+    if (str2lv == 24) {
+        document.getElementById("strong2b").innerHTML = 2144;
+        document.getElementById("strong2c").innerHTML = 3383 - 2144;
+    }
+    if (str2lv == 25) {
+        document.getElementById("strong2b").innerHTML = 2302;
+        document.getElementById("strong2c").innerHTML = 3383 - 2302;
+    }
+    if (str2lv == 26) {
+        document.getElementById("strong2b").innerHTML = 2467;
+        document.getElementById("strong2c").innerHTML = 3383 - 2467;
+    }
+    if (str2lv == 27) {
+        document.getElementById("strong2b").innerHTML = 2640;
+        document.getElementById("strong2c").innerHTML = 3383 - 2640;
+    }
+    if (str2lv == 28) {
+        document.getElementById("strong2b").innerHTML = 2820;
+        document.getElementById("strong2c").innerHTML = 3383 - 2820;
+    }
+    if (str2lv == 29) {
+        document.getElementById("strong2b").innerHTML = 3008;
+        document.getElementById("strong2c").innerHTML = 3383 - 3008;
+    }
+    if (str2lv == 30) {
+        document.getElementById("strong2b").innerHTML = 3383;
+        document.getElementById("strong2c").innerHTML = 3383 - 3383;
+    }
+    if (str2lv > 30||str2lv<0) {
+        document.getElementById("strong2c").innerHTML = "請更正";
+    }
+    if (str2lv >-1 & str2lv<31) {
+        document.getElementById("strong2c").style.color = "antiquewhite";
+    }else{
+        document.getElementById("strong2c").innerHTML = "請更正";
+        document.getElementById("strong2c").style.color = "red";
+    }
+
+    if (str3lv == 0) {
+        document.getElementById("strong3b").innerHTML = 0;
+        document.getElementById("strong3c").innerHTML = 3383 - 0;
+    }
+    if (str3lv == 1) {
+        document.getElementById("strong3b").innerHTML = 75;
+        document.getElementById("strong3c").innerHTML = 3383 - 75;
+    }
+    if (str3lv == 2) {
+        document.getElementById("strong3b").innerHTML = 98;
+        document.getElementById("strong3c").innerHTML = 3383 - 98;
+    }
+    if (str3lv == 3) {
+        document.getElementById("strong3b").innerHTML = 125;
+        document.getElementById("strong3c").innerHTML = 3383 - 125;
+    }
+    if (str3lv == 4) {
+        document.getElementById("strong3b").innerHTML = 155;
+        document.getElementById("strong3c").innerHTML = 3383 - 155;
+    }
+    if (str3lv == 5) {
+        document.getElementById("strong3b").innerHTML = 189;
+        document.getElementById("strong3c").innerHTML = 3383 - 189;
+    }
+    if (str3lv == 6) {
+        document.getElementById("strong3b").innerHTML = 227;
+        document.getElementById("strong3c").innerHTML = 3383 - 227;
+    }
+    if (str3lv == 7) {
+        document.getElementById("strong3b").innerHTML = 269;
+        document.getElementById("strong3c").innerHTML = 3383 - 269;
+    }
+    if (str3lv == 8) {
+        document.getElementById("strong3b").innerHTML = 314;
+        document.getElementById("strong3c").innerHTML = 3383 - 314;
+    }
+    if (str3lv == 9) {
+        document.getElementById("strong3b").innerHTML = 363;
+        document.getElementById("strong3c").innerHTML = 3383 - 363;
+    }
+    if (str3lv == 10) {
+        document.getElementById("strong3b").innerHTML = 513;
+        document.getElementById("strong3c").innerHTML = 3383 - 513;
+    }
+    if (str3lv == 11) {
+        document.getElementById("strong3b").innerHTML = 573;
+        document.getElementById("strong3c").innerHTML = 3383 - 573;
+    }
+    if (str3lv == 12) {
+        document.getElementById("strong3b").innerHTML = 641;
+        document.getElementById("strong3c").innerHTML = 3383 - 641;
+    }
+    if (str3lv == 13) {
+        document.getElementById("strong3b").innerHTML = 716;
+        document.getElementById("strong3c").innerHTML = 3383 - 716;
+    }
+    if (str3lv == 14) {
+        document.getElementById("strong3b").innerHTML = 799;
+        document.getElementById("strong3c").innerHTML = 3383 - 799;
+    }
+    if (str3lv == 15) {
+        document.getElementById("strong3b").innerHTML = 889;
+        document.getElementById("strong3c").innerHTML = 3383 - 889;
+    }
+    if (str3lv == 16) {
+        document.getElementById("strong3b").innerHTML = 987;
+        document.getElementById("strong3c").innerHTML = 3383 - 987;
+    }
+    if (str3lv == 17) {
+        document.getElementById("strong3b").innerHTML = 1092;
+        document.getElementById("strong3c").innerHTML = 3383 - 1092;
+    }
+    if (str3lv == 18) {
+        document.getElementById("strong3b").innerHTML = 1205;
+        document.getElementById("strong3c").innerHTML = 3383 - 1205;
+    }
+    if (str3lv == 19) {
+        document.getElementById("strong3b").innerHTML = 1325;
+        document.getElementById("strong3c").innerHTML = 3383 - 1325;
+    }
+    if (str3lv == 20) {
+        document.getElementById("strong3b").innerHTML = 1588;
+        document.getElementById("strong3c").innerHTML = 3383 - 1588;
+    }
+    if (str3lv == 21) {
+        document.getElementById("strong3b").innerHTML = 1716;
+        document.getElementById("strong3c").innerHTML = 3383 - 1716;
+    }
+    if (str3lv == 22) {
+        document.getElementById("strong3b").innerHTML = 1851;
+        document.getElementById("strong3c").innerHTML = 3383 - 1851;
+    }
+    if (str3lv == 23) {
+        document.getElementById("strong3b").innerHTML = 1994;
+        document.getElementById("strong3c").innerHTML = 3383 - 1994;
+    }
+    if (str3lv == 24) {
+        document.getElementById("strong3b").innerHTML = 2144;
+        document.getElementById("strong3c").innerHTML = 3383 - 2144;
+    }
+    if (str3lv == 25) {
+        document.getElementById("strong3b").innerHTML = 2302;
+        document.getElementById("strong3c").innerHTML = 3383 - 2302;
+    }
+    if (str3lv == 26) {
+        document.getElementById("strong3b").innerHTML = 2467;
+        document.getElementById("strong3c").innerHTML = 3383 - 2467;
+    }
+    if (str3lv == 27) {
+        document.getElementById("strong3b").innerHTML = 2640;
+        document.getElementById("strong3c").innerHTML = 3383 - 2640;
+    }
+    if (str3lv == 28) {
+        document.getElementById("strong3b").innerHTML = 2820;
+        document.getElementById("strong3c").innerHTML = 3383 - 2820;
+    }
+    if (str3lv == 29) {
+        document.getElementById("strong3b").innerHTML = 3008;
+        document.getElementById("strong3c").innerHTML = 3383 - 3008;
+    }
+    if (str3lv == 30) {
+        document.getElementById("strong3b").innerHTML = 3383;
+        document.getElementById("strong3c").innerHTML = 3383 - 3383;
+    }
+    if (str3lv >-1 & str3lv<31) {
+        document.getElementById("strong3c").style.color = "antiquewhite";
+    }else{
+        document.getElementById("strong3c").innerHTML = "請更正";
+        document.getElementById("strong3c").style.color = "red";
+    }
+
+    if (str4lv == 0) {
+        document.getElementById("strong4b").innerHTML = 0;
+        document.getElementById("strong4c").innerHTML = 3383 - 0;
+    }
+    if (str4lv == 1) {
+        document.getElementById("strong4b").innerHTML = 75;
+        document.getElementById("strong4c").innerHTML = 3383 - 75;
+    }
+    if (str4lv == 2) {
+        document.getElementById("strong4b").innerHTML = 98;
+        document.getElementById("strong4c").innerHTML = 3383 - 98;
+    }
+    if (str4lv == 3) {
+        document.getElementById("strong4b").innerHTML = 125;
+        document.getElementById("strong4c").innerHTML = 3383 - 125;
+    }
+    if (str4lv == 4) {
+        document.getElementById("strong4b").innerHTML = 155;
+        document.getElementById("strong4c").innerHTML = 3383 - 155;
+    }
+    if (str4lv == 5) {
+        document.getElementById("strong4b").innerHTML = 189;
+        document.getElementById("strong4c").innerHTML = 3383 - 189;
+    }
+    if (str4lv == 6) {
+        document.getElementById("strong4b").innerHTML = 227;
+        document.getElementById("strong4c").innerHTML = 3383 - 227;
+    }
+    if (str4lv == 7) {
+        document.getElementById("strong4b").innerHTML = 269;
+        document.getElementById("strong4c").innerHTML = 3383 - 269;
+    }
+    if (str4lv == 8) {
+        document.getElementById("strong4b").innerHTML = 314;
+        document.getElementById("strong4c").innerHTML = 3383 - 314;
+    }
+    if (str4lv == 9) {
+        document.getElementById("strong4b").innerHTML = 363;
+        document.getElementById("strong4c").innerHTML = 3383 - 363;
+    }
+    if (str4lv == 10) {
+        document.getElementById("strong4b").innerHTML = 513;
+        document.getElementById("strong4c").innerHTML = 3383 - 513;
+    }
+    if (str4lv == 11) {
+        document.getElementById("strong4b").innerHTML = 573;
+        document.getElementById("strong4c").innerHTML = 3383 - 573;
+    }
+    if (str4lv == 12) {
+        document.getElementById("strong4b").innerHTML = 641;
+        document.getElementById("strong4c").innerHTML = 3383 - 641;
+    }
+    if (str4lv == 13) {
+        document.getElementById("strong4b").innerHTML = 716;
+        document.getElementById("strong4c").innerHTML = 3383 - 716;
+    }
+    if (str4lv == 14) {
+        document.getElementById("strong4b").innerHTML = 799;
+        document.getElementById("strong4c").innerHTML = 3383 - 799;
+    }
+    if (str4lv == 15) {
+        document.getElementById("strong4b").innerHTML = 889;
+        document.getElementById("strong4c").innerHTML = 3383 - 889;
+    }
+    if (str4lv == 16) {
+        document.getElementById("strong4b").innerHTML = 987;
+        document.getElementById("strong4c").innerHTML = 3383 - 987;
+    }
+    if (str4lv == 17) {
+        document.getElementById("strong4b").innerHTML = 1092;
+        document.getElementById("strong4c").innerHTML = 3383 - 1092;
+    }
+    if (str4lv == 18) {
+        document.getElementById("strong4b").innerHTML = 1205;
+        document.getElementById("strong4c").innerHTML = 3383 - 1205;
+    }
+    if (str4lv == 19) {
+        document.getElementById("strong4b").innerHTML = 1325;
+        document.getElementById("strong4c").innerHTML = 3383 - 1325;
+    }
+    if (str4lv == 20) {
+        document.getElementById("strong4b").innerHTML = 1588;
+        document.getElementById("strong4c").innerHTML = 3383 - 1588;
+    }
+    if (str4lv == 21) {
+        document.getElementById("strong4b").innerHTML = 1716;
+        document.getElementById("strong4c").innerHTML = 3383 - 1716;
+    }
+    if (str4lv == 22) {
+        document.getElementById("strong4b").innerHTML = 1851;
+        document.getElementById("strong4c").innerHTML = 3383 - 1851;
+    }
+    if (str4lv == 23) {
+        document.getElementById("strong4b").innerHTML = 1994;
+        document.getElementById("strong4c").innerHTML = 3383 - 1994;
+    }
+    if (str4lv == 24) {
+        document.getElementById("strong4b").innerHTML = 2144;
+        document.getElementById("strong4c").innerHTML = 3383 - 2144;
+    }
+    if (str4lv == 25) {
+        document.getElementById("strong4b").innerHTML = 2302;
+        document.getElementById("strong4c").innerHTML = 3383 - 2302;
+    }
+    if (str4lv == 26) {
+        document.getElementById("strong4b").innerHTML = 2467;
+        document.getElementById("strong4c").innerHTML = 3383 - 2467;
+    }
+    if (str4lv == 27) {
+        document.getElementById("strong4b").innerHTML = 2640;
+        document.getElementById("strong4c").innerHTML = 3383 - 2640;
+    }
+    if (str4lv == 28) {
+        document.getElementById("strong4b").innerHTML = 2820;
+        document.getElementById("strong4c").innerHTML = 3383 - 2820;
+    }
+    if (str4lv == 29) {
+        document.getElementById("strong4b").innerHTML = 3008;
+        document.getElementById("strong4c").innerHTML = 3383 - 3008;
+    }
+    if (str4lv == 30) {
+        document.getElementById("strong4b").innerHTML = 3383;
+        document.getElementById("strong4c").innerHTML = 3383 - 3383;
+    }
+    if (str4lv >-1 & str4lv<31) {
+        document.getElementById("strong4c").style.color = "antiquewhite";
+    }else{
+        document.getElementById("strong4c").innerHTML = "請更正";
+        document.getElementById("strong4c").style.color = "red";
+    }
+	
+	if (konlv == 0) {
+        document.getElementById("konton1b").innerHTML = 0;
+        document.getElementById("konton1c").innerHTML = 6268 - 0;
+    }
+    if (konlv == 1) {
+        document.getElementById("konton1b").innerHTML = 125;
+        document.getElementById("konton1c").innerHTML = 6268 - 125;
+    }
+    if (konlv == 2) {
+        document.getElementById("konton1b").innerHTML = 163;
+        document.getElementById("konton1c").innerHTML = 6268 - 163;
+    }
+    if (konlv == 3) {
+        document.getElementById("konton1b").innerHTML = 207;
+        document.getElementById("konton1c").innerHTML = 6268 - 207;
+    }
+    if (konlv == 4) {
+        document.getElementById("konton1b").innerHTML = 257;
+        document.getElementById("konton1c").innerHTML = 6268 - 257;
+    }
+    if (konlv == 5) {
+        document.getElementById("konton1b").innerHTML = 314;
+        document.getElementById("konton1c").innerHTML = 6268 - 314;
+    }
+    if (konlv == 6) {
+        document.getElementById("konton1b").innerHTML = 377;
+        document.getElementById("konton1c").innerHTML = 6268 - 377;
+    }
+    if (konlv == 7) {
+        document.getElementById("konton1b").innerHTML = 446;
+        document.getElementById("konton1c").innerHTML = 6268 - 446;
+    }
+    if (konlv == 8) {
+        document.getElementById("konton1b").innerHTML = 521;
+        document.getElementById("konton1c").innerHTML = 6268 - 521;
+    }
+    if (konlv == 9) {
+        document.getElementById("konton1b").innerHTML = 603;
+        document.getElementById("konton1c").innerHTML = 6268 - 603;
+    }
+    if (konlv == 10) {
+        document.getElementById("konton1b").innerHTML = 903;
+        document.getElementById("konton1c").innerHTML = 6268 - 903;
+    }
+    if (konlv == 11) {
+        document.getElementById("konton1b").innerHTML = 1013;
+        document.getElementById("konton1c").innerHTML = 6268 - 1013;
+    }
+    if (konlv == 12) {
+        document.getElementById("konton1b").innerHTML = 1137;
+        document.getElementById("konton1c").innerHTML = 6268 - 1137;
+    }
+    if (konlv == 13) {
+        document.getElementById("konton1b").innerHTML = 1275;
+        document.getElementById("konton1c").innerHTML = 6268 - 1275;
+    }
+    if (konlv == 14) {
+        document.getElementById("konton1b").innerHTML = 1427;
+        document.getElementById("konton1c").innerHTML = 6268 - 1427;
+    }
+    if (konlv == 15) {
+        document.getElementById("konton1b").innerHTML = 1592;
+        document.getElementById("konton1c").innerHTML = 6268 - 1592;
+    }
+    if (konlv == 16) {
+        document.getElementById("konton1b").innerHTML = 1771;
+        document.getElementById("konton1c").innerHTML = 6268 - 1771;
+    }
+    if (konlv == 17) {
+        document.getElementById("konton1b").innerHTML = 1964;
+        document.getElementById("konton1c").innerHTML = 6268 - 1964;
+    }
+    if (konlv == 18) {
+        document.getElementById("konton1b").innerHTML = 2171;
+        document.getElementById("konton1c").innerHTML = 6268 - 2171;
+    }
+    if (konlv == 19) {
+        document.getElementById("konton1b").innerHTML = 2391;
+        document.getElementById("konton1c").innerHTML = 6268 - 2391;
+    }
+    if (konlv == 20) {
+        document.getElementById("konton1b").innerHTML = 2916;
+        document.getElementById("konton1c").innerHTML = 6268 - 2916;
+    }
+    if (konlv == 21) {
+        document.getElementById("konton1b").innerHTML = 3150;
+        document.getElementById("konton1c").innerHTML = 6268 - 3150;
+    }
+    if (konlv == 22) {
+        document.getElementById("konton1b").innerHTML = 3398;
+        document.getElementById("konton1c").innerHTML = 6268 - 3398;
+    }
+    if (konlv == 23) {
+        document.getElementById("konton1b").innerHTML = 3660;
+        document.getElementById("konton1c").innerHTML = 6268 - 3660;
+    }
+    if (konlv == 24) {
+        document.getElementById("konton1b").innerHTML = 3935;
+        document.getElementById("konton1c").innerHTML = 6268 - 3935;
+    }
+    if (konlv == 25) {
+        document.getElementById("konton1b").innerHTML = 4224;
+        document.getElementById("konton1c").innerHTML = 6268 - 4224;
+    }
+    if (konlv == 26) {
+        document.getElementById("konton1b").innerHTML = 4527;
+        document.getElementById("konton1c").innerHTML = 6268 - 4527;
+    }
+    if (konlv == 27) {
+        document.getElementById("konton1b").innerHTML = 4844;
+        document.getElementById("konton1c").innerHTML = 6268 - 4844;
+    }
+    if (konlv == 28) {
+        document.getElementById("konton1b").innerHTML = 5174;
+        document.getElementById("konton1c").innerHTML = 6268 - 5174;
+    }
+    if (konlv == 29) {
+        document.getElementById("konton1b").innerHTML = 5518;
+        document.getElementById("konton1c").innerHTML = 6268 - 5518;
+    }
+    if (konlv == 30) {
+        document.getElementById("konton1b").innerHTML = 6268;
+        document.getElementById("konton1c").innerHTML = 6268 - 6268;
+    }
+    if (konlv >-1 & konlv<31) {
+        document.getElementById("konton1c").style.color = "antiquewhite";
+    }else{
+        document.getElementById("konton1c").innerHTML = "請更正";
+        document.getElementById("konton1c").style.color = "red";
+	}
+    var sn1 = parseInt($("#skill1b").html());
+    var jn1 = parseInt($("#jinton1b").html());
+    var jn2 = parseInt($("#jinton2b").html());
+    var stn1 = parseInt($("#strong1b").html());
+    var stn2 = parseInt($("#strong2b").html());
+    var stn3 = parseInt($("#strong3b").html());
+    var stn4 = parseInt($("#strong4b").html());
+	var kon1 = parseInt($("#konton1b").html());
+    var alln1 = sn1 + jn1 + jn2 + stn1 + stn2 + stn3 + stn4 + kon1;
+    document.getElementById("all").innerHTML = alln1;
+    var sn2 = parseInt($("#skill1c").html());
+    var jn12 = parseInt($("#jinton1c").html());
+    var jn22 = parseInt($("#jinton2c").html());
+    var stn12 = parseInt($("#strong1c").html());
+    var stn22 = parseInt($("#strong2c").html());
+    var stn32 = parseInt($("#strong3c").html());
+    var stn42 = parseInt($("#strong4c").html());
+	var kon2 = parseInt($("#konton1c").html());
+    var alln2 = sn2 + jn12 + jn22 + stn12 + stn22 + stn32 + stn42 + kon2;
+    document.getElementById("all2").innerHTML = alln2;
+    //document.getElementById("no1").innerHTML = alln2+8520;
+    var x;
+        x=alln1/287.04;
+        document.getElementById("ooo1").innerHTML = x.toFixed(2)+"%";
+    var vvv2 = document.getElementById("vvv");
+    vvv2.setAttribute('value',alln1);
+    //document.getElementById("jinton2").style.display="none";
+    //document.getElementById("konton1").style.display="none";
+    //document.getElementById("jinton2c").style.display="block";
+    //document.getElementById("konton1c").style.display="block";
+    document.getElementById("no2").innerHTML = "惡魔品質製";
+}
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</body></html>
