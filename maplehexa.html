@@ -80,8 +80,8 @@
     <span class="shape-ex5" style="position: absolute;top:59px;left:42px;"></span><span class="shape-ex5" style="position: absolute;top:59px;left:110px;"></span>
     <span class="shape-ex5" style="position: absolute;top:118px;left:76px;"></span>
     <!--精通核心-->
-    <span class="shape-ex5" style="position: absolute;top:0;left:378px;"></span>
-    <span class="shape-ex5" style="position: absolute;top:59px;left:276px;"></span>
+    <!-- <span class="shape-ex5" style="position: absolute;top:0;left:378px;"></span> -->
+    <!-- <span class="shape-ex5" style="position: absolute;top:59px;left:276px;"></span> -->
     <!--共通核心-->
     <span class="shape-ex5" style="position: absolute;top:321px;left:276px;"></span><span class="shape-ex5" style="position: absolute;top:321px;left:344px;"></span>
     <span class="shape-ex5" style="position: absolute;top:380px;left:378px;"></span>
@@ -97,9 +97,17 @@
     <input id="jinton1" style="position: absolute;top:144px;left:246px;width: 50px;text-align: center;" placeholder="請輸入" oninput="value=value.replace(/[^\d]/g,'')" inputmode="numeric">
     <b id="jinton1c" style="position: absolute;top:166px;left:250px;color:antiquewhite;width: 50px;text-align: center;"></b>
     <!--2-->
-    <span class="shape-ex5" style="position: absolute;top:59px;left:344px;"></span>
+    <span class="shape-ex5" style="position: absolute;top:59px;left:276px;"></span>
     <input id="jinton2" style="position: absolute;top:85px;left:281px;width: 50px;text-align: center;" placeholder="請輸入" oninput="value=value.replace(/[^\d]/g,'')" inputmode="numeric">
-    <b id="jinton2c" style="position: absolute;top:108px;left:278px;color:antiquewhite;width: 64px;text-align: center;"></b>
+    <b id="jinton2c" style="position: absolute;top:108px;left:284px;color:antiquewhite;width: 50px;text-align: center;"></b>
+	<!--3-->
+    <span class="shape-ex5" style="position: absolute;top:59px;left:344px;"></span>
+    <input id="jinton3" style="position: absolute;top:85px;left:349px;width: 50px;text-align: center;" placeholder="請輸入" oninput="value=value.replace(/[^\d]/g,'')" inputmode="numeric">
+    <b id="jinton3c" style="position: absolute;top:108px;left:352px;color:antiquewhite;width: 50px;text-align: center;"></b>
+    <!--4-->
+	<span class="shape-ex5" style="position: absolute;top:0px;left:378px;"></span>
+    <input id="jinton4" style="position: absolute;top:26px;left:382px;width: 50px;text-align: center;" placeholder="請輸入" oninput="value=value.replace(/[^\d]/g,'')" inputmode="numeric">
+    <b id="jinton4c" style="position: absolute;top:50px;left:386px;color:antiquewhite;width: 50px;text-align: center;"></b>
     <!--強化核心-->
     <!--1-->
     <span class="shape-ex5" style="position: absolute;top:262px;left:144px;"></span>
@@ -124,11 +132,16 @@
 	<b id="konton1c" style="position: absolute;top:310px;left:244px;color:antiquewhite;width: 64px;text-align: center;"></b>
 
     <button onclick="go()" style="position: absolute;top:430px;left:170px;width:100px;height: 30px;"><b style="font-size: 18px;">計算</b></button><br>
-    <b style="position: absolute;top:467px;left:52px;">碎片進度：</b>
-    <progress max="28704" value="0" id="vvv" style="position: absolute;top:470px;left:132px;"></progress>
-    <b id="ooo1" style="position: absolute;top:470px;left:347px;"></b><span id="ooo2"></span>
-    <b style="position: absolute;top:487px;left:52px;">碎片總消耗量：</b><b id="all" style="position: absolute;top:490px;left:162px;"></b><br>
-    <b style="position: absolute;top:507px;left:52px;">還需碎片數量：</b><b id="all2" style="position: absolute;top:510px;left:162px;"></b><br>
+    <b style="position: absolute;top:467px;left:52px;">碎片進度(含共用)：</b>
+    <progress max="33208" value="0" id="vvv" style="position: absolute;top:472px;left:232px;"></progress>
+    <b id="ooo1" style="position: absolute;top:470px;left:447px;"></b><span id="ooo1"></span>
+    <b style="position: absolute;top:487px;left:52px;">碎片總消耗量(含共用)：</b><b id="all" style="position: absolute;top:490px;left:242px;"></b><br>
+    <b style="position: absolute;top:507px;left:52px;">還需碎片數量(含共用)：</b><b id="all2" style="position: absolute;top:510px;left:242px;"></b><br>
+	<b style="position: absolute;top:527px;left:52px;">碎片進度(不含共用)：</b>
+    <progress max="26940" value="0" id="www" style="position: absolute;top:532px;left:232px;"></progress>
+    <b id="ooo2" style="position: absolute;top:530px;left:447px;"></b><span id="ooo2"></span>
+	<b style="position: absolute;top:547px;left:52px;">碎片總消耗量(不含共用)：</b><b id="all3" style="position: absolute;top:550px;left:242px;"></b><br>
+    <b style="position: absolute;top:567px;left:52px;">還需碎片數量(不含共用)：</b><b id="all4" style="position: absolute;top:570px;left:242px;"></b><br>
     <b id="no2" style="position: absolute;top:659px;left:332px;"></b>
     
     <div id="hexa666" style="display: none;">
@@ -140,6 +153,12 @@
         距離滿等還缺：</label><label>個碎片</label><br>
 		<label>精通核心2：等級</label><br>
         <label>消耗碎片數量：</label><span id="jinton2b"></span><label><br>
+        距離滿等還缺：</label><label>個碎片</label><br>
+		<label>精通核心3：等級</label><br>
+        <label>消耗碎片數量：</label><span id="jinton3b"></span><label><br>
+        距離滿等還缺：</label><label>個碎片</label><br>
+		<label>精通核心4：等級</label><br>
+        <label>消耗碎片數量：</label><span id="jinton4b"></span><label><br>
         距離滿等還缺：</label><label>個碎片</label><br>
         <label>強化核心1：等級</label><br>
         <label>消耗碎片數量：</label><span id="strong1b"></span><label><br>
@@ -158,17 +177,19 @@
         距離滿等還缺：</label><label>個碎片</label><br><br>
         
 </div>
-<span class="shape-ex6" style="position: absolute;top:600px;left:120px;"></span>
-<b style="position: absolute;top:615px;left:185px;color: antiquewhite;">使用說明</b>
-<b style="position: absolute;top:651px;left:135px;color: antiquewhite;">1.</b><b style="position: absolute;top:647px;left:155px;background-color: black;color: antiquewhite;border-style:solid;border-radius: 5px;">&ensp;輸入技能等級&ensp;0~30&ensp;</b>
-<b style="position: absolute;top:683px;left:135px;color: antiquewhite;">2.&ensp;按下</b><b style="position: absolute;top:680px;left:190px;background-color: black;color: antiquewhite;border-style:solid;border-radius: 5px;">&ensp;計算&ensp;</b>
-<b style="position: absolute;top:715px;left:140px;color: antiquewhite;">&ensp;顯示滿等還需碎片數&ensp;</b>
+<span class="shape-ex6" style="position: absolute;top:650px;left:120px;"></span>
+<b style="position: absolute;top:665px;left:185px;color: antiquewhite;">使用說明</b>
+<b style="position: absolute;top:701px;left:135px;color: antiquewhite;">1.</b><b style="position: absolute;top:697px;left:155px;background-color: black;color: antiquewhite;border-style:solid;border-radius: 5px;">&ensp;輸入技能等級&ensp;0~30&ensp;</b>
+<b style="position: absolute;top:733px;left:135px;color: antiquewhite;">2.&ensp;按下</b><b style="position: absolute;top:730px;left:190px;background-color: black;color: antiquewhite;border-style:solid;border-radius: 5px;">&ensp;計算&ensp;</b>
+<b style="position: absolute;top:765px;left:140px;color: antiquewhite;">&ensp;顯示滿等還需碎片數&ensp;</b>
 
 <script>
 function go() {
     var skilv = document.getElementById('skill1').value;
     var jin1lv = document.getElementById('jinton1').value;
     var jin2lv = document.getElementById('jinton2').value;
+    var jin3lv = document.getElementById('jinton3').value;
+    var jin4lv = document.getElementById('jinton4').value;
     var str1lv = document.getElementById('strong1').value;
     var str2lv = document.getElementById('strong2').value;
     var str3lv = document.getElementById('strong3').value;
@@ -569,6 +590,267 @@ function go() {
         document.getElementById("jinton2c").style.color = "red";
     }
 
+	if (jin3lv == 0) {
+        document.getElementById("jinton3b").innerHTML = 0;
+        document.getElementById("jinton3c").innerHTML = 2252 - 0;
+    }
+    if (jin3lv == 1) {
+        document.getElementById("jinton3b").innerHTML = 50;
+        document.getElementById("jinton3c").innerHTML = 2252 - 50;
+    }
+    if (jin3lv == 2) {
+        document.getElementById("jinton3b").innerHTML = 65;
+        document.getElementById("jinton3c").innerHTML = 2252 - 65;
+    }
+    if (jin3lv == 3) {
+        document.getElementById("jinton3b").innerHTML = 83;
+        document.getElementById("jinton3c").innerHTML = 2252 - 83;
+    }
+    if (jin3lv == 4) {
+        document.getElementById("jinton3b").innerHTML = 103;
+        document.getElementById("jinton3c").innerHTML = 2252 - 103;
+    }
+    if (jin3lv == 5) {
+        document.getElementById("jinton3b").innerHTML = 126;
+        document.getElementById("jinton3c").innerHTML = 2252 - 126;
+    }
+    if (jin3lv == 6) {
+        document.getElementById("jinton3b").innerHTML = 151;
+        document.getElementById("jinton3c").innerHTML = 2252 - 151;
+    }
+    if (jin3lv == 7) {
+        document.getElementById("jinton3b").innerHTML = 179;
+        document.getElementById("jinton3c").innerHTML = 2252 - 179;
+    }
+    if (jin3lv == 8) {
+        document.getElementById("jinton3b").innerHTML = 209;
+        document.getElementById("jinton3c").innerHTML = 2252 - 209;
+    }
+    if (jin3lv == 9) {
+        document.getElementById("jinton3b").innerHTML = 242;
+        document.getElementById("jinton3c").innerHTML = 2252 - 242;
+    }
+    if (jin3lv == 10) {
+        document.getElementById("jinton3b").innerHTML = 342;
+        document.getElementById("jinton3c").innerHTML = 2252 - 342;
+    }
+    if (jin3lv == 11) {
+        document.getElementById("jinton3b").innerHTML = 382;
+        document.getElementById("jinton3c").innerHTML = 2252 - 382;
+    }
+    if (jin3lv == 12) {
+        document.getElementById("jinton3b").innerHTML = 427;
+        document.getElementById("jinton3c").innerHTML = 2252 - 427;
+    }
+    if (jin3lv == 13) {
+        document.getElementById("jinton3b").innerHTML = 477;
+        document.getElementById("jinton3c").innerHTML = 2252 - 477;
+    }
+    if (jin3lv == 14) {
+        document.getElementById("jinton3b").innerHTML = 532;
+        document.getElementById("jinton3c").innerHTML = 2252 - 532;
+    }
+    if (jin3lv == 15) {
+        document.getElementById("jinton3b").innerHTML = 592;
+        document.getElementById("jinton3c").innerHTML = 2252 - 592;
+    }
+    if (jin3lv == 16) {
+        document.getElementById("jinton3b").innerHTML = 657;
+        document.getElementById("jinton3c").innerHTML = 2252 - 657;
+    }
+    if (jin3lv == 17) {
+        document.getElementById("jinton3b").innerHTML = 727;
+        document.getElementById("jinton3c").innerHTML = 2252 - 727;
+    }
+    if (jin3lv == 18) {
+        document.getElementById("jinton3b").innerHTML = 802;
+        document.getElementById("jinton3c").innerHTML = 2252 - 802;
+    }
+    if (jin3lv == 19) {
+        document.getElementById("jinton3b").innerHTML = 882;
+        document.getElementById("jinton3c").innerHTML = 2252 - 882;
+    }
+    if (jin3lv == 20) {
+        document.getElementById("jinton3b").innerHTML = 1057;
+        document.getElementById("jinton3c").innerHTML = 2252 - 1057;
+    }
+    if (jin3lv == 21) {
+        document.getElementById("jinton3b").innerHTML = 1142;
+        document.getElementById("jinton3c").innerHTML = 2252 - 1142;
+    }
+    if (jin3lv == 22) {
+        document.getElementById("jinton3b").innerHTML = 1232;
+        document.getElementById("jinton3c").innerHTML = 2252 - 1232;
+    }
+    if (jin3lv == 23) {
+        document.getElementById("jinton3b").innerHTML = 1327;
+        document.getElementById("jinton3c").innerHTML = 2252 - 1327;
+    }
+    if (jin3lv == 24) {
+        document.getElementById("jinton3b").innerHTML = 1427;
+        document.getElementById("jinton3c").innerHTML = 2252 - 1427;
+    }
+    if (jin3lv == 25) {
+        document.getElementById("jinton3b").innerHTML = 1532;
+        document.getElementById("jinton3c").innerHTML = 2252 - 1532;
+    }
+    if (jin3lv == 26) {
+        document.getElementById("jinton3b").innerHTML = 1642;
+        document.getElementById("jinton3c").innerHTML = 2252 - 1642;
+    }
+    if (jin3lv == 27) {
+        document.getElementById("jinton3b").innerHTML = 1757;
+        document.getElementById("jinton3c").innerHTML = 2252 - 1757;
+    }
+    if (jin3lv == 28) {
+        document.getElementById("jinton3b").innerHTML = 1877;
+        document.getElementById("jinton3c").innerHTML = 2252 - 1877;
+    }
+    if (jin3lv == 29) {
+        document.getElementById("jinton3b").innerHTML = 2002;
+        document.getElementById("jinton3c").innerHTML = 2252 - 2002;
+    }
+    if (jin3lv == 30) {
+        document.getElementById("jinton3b").innerHTML = 2252;
+        document.getElementById("jinton3c").innerHTML = 2252 - 2252;
+    }
+    if (jin3lv >-1 & jin3lv<31) {
+        document.getElementById("jinton3c").style.color = "antiquewhite";
+    }else{
+        document.getElementById("jinton3c").innerHTML = "請更正";
+        document.getElementById("jinton3c").style.color = "red";
+    }
+	
+	if (jin4lv == 0) {
+        document.getElementById("jinton4b").innerHTML = 0;
+        document.getElementById("jinton4c").innerHTML = 2252 - 0;
+    }
+    if (jin4lv == 1) {
+        document.getElementById("jinton4b").innerHTML = 50;
+        document.getElementById("jinton4c").innerHTML = 2252 - 50;
+    }
+    if (jin4lv == 2) {
+        document.getElementById("jinton4b").innerHTML = 65;
+        document.getElementById("jinton4c").innerHTML = 2252 - 65;
+    }
+    if (jin4lv == 3) {
+        document.getElementById("jinton4b").innerHTML = 83;
+        document.getElementById("jinton4c").innerHTML = 2252 - 83;
+    }
+    if (jin4lv == 4) {
+        document.getElementById("jinton4b").innerHTML = 103;
+        document.getElementById("jinton4c").innerHTML = 2252 - 103;
+    }
+    if (jin4lv == 5) {
+        document.getElementById("jinton4b").innerHTML = 126;
+        document.getElementById("jinton4c").innerHTML = 2252 - 126;
+    }
+    if (jin4lv == 6) {
+        document.getElementById("jinton4b").innerHTML = 151;
+        document.getElementById("jinton4c").innerHTML = 2252 - 151;
+    }
+    if (jin4lv == 7) {
+        document.getElementById("jinton4b").innerHTML = 179;
+        document.getElementById("jinton4c").innerHTML = 2252 - 179;
+    }
+    if (jin4lv == 8) {
+        document.getElementById("jinton4b").innerHTML = 209;
+        document.getElementById("jinton4c").innerHTML = 2252 - 209;
+    }
+    if (jin4lv == 9) {
+        document.getElementById("jinton4b").innerHTML = 242;
+        document.getElementById("jinton4c").innerHTML = 2252 - 242;
+    }
+    if (jin4lv == 10) {
+        document.getElementById("jinton4b").innerHTML = 342;
+        document.getElementById("jinton4c").innerHTML = 2252 - 342;
+    }
+    if (jin4lv == 11) {
+        document.getElementById("jinton4b").innerHTML = 382;
+        document.getElementById("jinton4c").innerHTML = 2252 - 382;
+    }
+    if (jin4lv == 12) {
+        document.getElementById("jinton4b").innerHTML = 427;
+        document.getElementById("jinton4c").innerHTML = 2252 - 427;
+    }
+    if (jin4lv == 13) {
+        document.getElementById("jinton4b").innerHTML = 477;
+        document.getElementById("jinton4c").innerHTML = 2252 - 477;
+    }
+    if (jin4lv == 14) {
+        document.getElementById("jinton4b").innerHTML = 532;
+        document.getElementById("jinton4c").innerHTML = 2252 - 532;
+    }
+    if (jin4lv == 15) {
+        document.getElementById("jinton4b").innerHTML = 592;
+        document.getElementById("jinton4c").innerHTML = 2252 - 592;
+    }
+    if (jin4lv == 16) {
+        document.getElementById("jinton4b").innerHTML = 657;
+        document.getElementById("jinton4c").innerHTML = 2252 - 657;
+    }
+    if (jin4lv == 17) {
+        document.getElementById("jinton4b").innerHTML = 727;
+        document.getElementById("jinton4c").innerHTML = 2252 - 727;
+    }
+    if (jin4lv == 18) {
+        document.getElementById("jinton4b").innerHTML = 802;
+        document.getElementById("jinton4c").innerHTML = 2252 - 802;
+    }
+    if (jin4lv == 19) {
+        document.getElementById("jinton4b").innerHTML = 882;
+        document.getElementById("jinton4c").innerHTML = 2252 - 882;
+    }
+    if (jin4lv == 20) {
+        document.getElementById("jinton4b").innerHTML = 1057;
+        document.getElementById("jinton4c").innerHTML = 2252 - 1057;
+    }
+    if (jin4lv == 21) {
+        document.getElementById("jinton4b").innerHTML = 1142;
+        document.getElementById("jinton4c").innerHTML = 2252 - 1142;
+    }
+    if (jin4lv == 22) {
+        document.getElementById("jinton4b").innerHTML = 1232;
+        document.getElementById("jinton4c").innerHTML = 2252 - 1232;
+    }
+    if (jin4lv == 23) {
+        document.getElementById("jinton4b").innerHTML = 1327;
+        document.getElementById("jinton4c").innerHTML = 2252 - 1327;
+    }
+    if (jin4lv == 24) {
+        document.getElementById("jinton4b").innerHTML = 1427;
+        document.getElementById("jinton4c").innerHTML = 2252 - 1427;
+    }
+    if (jin4lv == 25) {
+        document.getElementById("jinton4b").innerHTML = 1532;
+        document.getElementById("jinton4c").innerHTML = 2252 - 1532;
+    }
+    if (jin4lv == 26) {
+        document.getElementById("jinton4b").innerHTML = 1642;
+        document.getElementById("jinton4c").innerHTML = 2252 - 1642;
+    }
+    if (jin4lv == 27) {
+        document.getElementById("jinton4b").innerHTML = 1757;
+        document.getElementById("jinton4c").innerHTML = 2252 - 1757;
+    }
+    if (jin4lv == 28) {
+        document.getElementById("jinton4b").innerHTML = 1877;
+        document.getElementById("jinton4c").innerHTML = 2252 - 1877;
+    }
+    if (jin4lv == 29) {
+        document.getElementById("jinton4b").innerHTML = 2002;
+        document.getElementById("jinton4c").innerHTML = 2252 - 2002;
+    }
+    if (jin4lv == 30) {
+        document.getElementById("jinton4b").innerHTML = 2252;
+        document.getElementById("jinton4c").innerHTML = 2252 - 2252;
+    }
+    if (jin4lv >-1 & jin4lv<31) {
+        document.getElementById("jinton4c").style.color = "antiquewhite";
+    }else{
+        document.getElementById("jinton4c").innerHTML = "請更正";
+        document.getElementById("jinton4c").style.color = "red";
+    }
 
     if (str1lv == 0) {
         document.getElementById("strong1b").innerHTML = 0;
@@ -1230,29 +1512,40 @@ function go() {
     var sn1 = parseInt($("#skill1b").html());
     var jn1 = parseInt($("#jinton1b").html());
     var jn2 = parseInt($("#jinton2b").html());
+	var jn3 = parseInt($("#jinton3b").html());
+    var jn4 = parseInt($("#jinton4b").html());
     var stn1 = parseInt($("#strong1b").html());
     var stn2 = parseInt($("#strong2b").html());
     var stn3 = parseInt($("#strong3b").html());
     var stn4 = parseInt($("#strong4b").html());
-	var kon1 = parseInt($("#konton1b").html());
-    var alln1 = sn1 + jn1 + jn2 + stn1 + stn2 + stn3 + stn4 + kon1;
+	var kon1b = parseInt($("#konton1b").html());
+    var alln1 = sn1 + jn1 + jn2 + jn3 + jn4 + stn1 + stn2 + stn3 + stn4 + kon1b;
+	var nokonn1 = sn1 + jn1 + jn2 + jn3 + jn4 + stn1 + stn2 + stn3 + stn4;
     document.getElementById("all").innerHTML = alln1;
+    document.getElementById("all3").innerHTML = nokonn1;
     var sn2 = parseInt($("#skill1c").html());
     var jn12 = parseInt($("#jinton1c").html());
     var jn22 = parseInt($("#jinton2c").html());
+	var jn32 = parseInt($("#jinton3c").html());
+    var jn42 = parseInt($("#jinton4c").html());
     var stn12 = parseInt($("#strong1c").html());
     var stn22 = parseInt($("#strong2c").html());
     var stn32 = parseInt($("#strong3c").html());
     var stn42 = parseInt($("#strong4c").html());
-	var kon2 = parseInt($("#konton1c").html());
-    var alln2 = sn2 + jn12 + jn22 + stn12 + stn22 + stn32 + stn42 + kon2;
+	var kon1c = parseInt($("#konton1c").html());
+    var alln2 = sn2 + jn12 + jn22 + jn32 + jn42 + stn12 + stn22 + stn32 + stn42 + kon1c;
     document.getElementById("all2").innerHTML = alln2;
-    //document.getElementById("no1").innerHTML = alln2+8520;
+    document.getElementById("all4").innerHTML = alln2 - kon1c;
     var x;
-        x=alln1/287.04;
+        x=alln1/332.08;  //含共用總碎片
         document.getElementById("ooo1").innerHTML = x.toFixed(2)+"%";
     var vvv2 = document.getElementById("vvv");
     vvv2.setAttribute('value',alln1);
+	var y;
+        y=nokonn1/269.40;  //不含共用總碎片
+        document.getElementById("ooo2").innerHTML = y.toFixed(2)+"%";
+    var www2 = document.getElementById("www");
+    www2.setAttribute('value',nokonn1);
     //document.getElementById("jinton2").style.display="none";
     //document.getElementById("konton1").style.display="none";
     //document.getElementById("jinton2c").style.display="block";
